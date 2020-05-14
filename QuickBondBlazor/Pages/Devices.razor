@@ -1,0 +1,19 @@
+﻿@page "/devices"
+
+@inject QuickBondBlazor.Data.BondApi bondapi 
+
+<button @onclick="buttonClicked">Get Devices</button>
+
+
+
+
+
+@code {
+
+
+    private async Task buttonClicked()
+    {
+        string bondresult = await bondapi.GetDevices();
+        Console.WriteLine(bondresult);
+    }
+}
